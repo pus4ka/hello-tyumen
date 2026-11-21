@@ -86,7 +86,7 @@
     const meta = $('meta[name="description"]');
     if (meta) meta.setAttribute("content", state.lang === "ru"
       ? "Двуязычный гид по бесплатному и недорогому досугу в Тюмени для иногородних и иностранных студентов ТюмГУ."
-      : "A bilingual guide to free and cheap student leisure in Tyumen for out-of-town and international students of TyumSU.");
+      : "A bilingual guide to free and cheap student leisure in Tyumen for out-of-town and international students of UTMN.");
   }
 
   function applyTheme() {
