@@ -256,14 +256,21 @@
       <header class="sec-head">
         <p class="kicker" data-i18n="map.kicker">Ориентирование</p>
         <h2 data-i18n="map.title">Карта центра</h2>
-        <p class="sec-lead" data-i18n="map.lead">Настоящая карта Тюмени. Нажми на точку — откроется карточка места.</p>
+        <p class="sec-lead" data-i18n="map.lead">Настоящая карта Тюмени. Колесо мыши или кнопки приближают, перетаскивание двигает карту. Нажми на точку — откроется карточка места.</p>
       </header>
 
       <div class="map-layout">
         <div class="map-frame">
           <div class="map-canvas" id="mapCanvas">
-            <img class="map-img" src="map-bg.jpg" alt="Карта центра Тюмени">
-            <div class="map-pins" id="pins"></div>
+            <div class="map-stage" id="mapStage">
+              <img class="map-img" src="map-bg.jpg" alt="Карта центра Тюмени" draggable="false">
+              <div class="map-pins" id="pins"></div>
+            </div>
+            <div class="map-tools" role="group" aria-label="Масштаб карты">
+              <button type="button" class="map-btn" data-map-zoom="in" aria-label="Приблизить">+</button>
+              <button type="button" class="map-btn" data-map-zoom="out" aria-label="Отдалить">−</button>
+              <button type="button" class="map-btn" data-map-zoom="reset" aria-label="Сбросить масштаб">⤢</button>
+            </div>
             <span class="map-attr" data-i18n="map.attribution">Карта: © OpenStreetMap contributors</span>
           </div>
           <p class="map-legend"><span class="dot-live"></span><span data-i18n="map.legend">Нажми на точку, чтобы открыть карточку места</span></p>
