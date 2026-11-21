@@ -543,6 +543,7 @@
       const fav = state.fav.has(p.id);
       openModal(`
         ${p.photo ? `<img class="m-photo" src="${p.photo}" alt="">` : ""}
+        ${p.photoCredit ? `<p class="m-credit">${p.photoCredit}</p>` : ""}
         <span class="m-cat" style="--c:${catColor(p.cat)}"><i></i>${catName(p.cat)}</span>
         <h3 class="m-title" id="modalTitle">${L(p).name}</h3>
         <p class="m-desc">${L(p).desc}</p>
@@ -564,6 +565,7 @@
       const items = PLACES.filter(p => state.fav.has(p.id));
       openModal(`
         ${p.photo ? `<img class="m-photo" src="${p.photo}" alt="">` : ""}
+        ${p.photoCredit ? `<p class="m-credit">${p.photoCredit}</p>` : ""}
         <span class="m-cat" style="--c:var(--terra)"><i></i>${state.fav.size} ${t("fav.count")}</span>
         <h3 class="m-title" id="modalTitle">${t("fav.title")}</h3>
         ${items.length
