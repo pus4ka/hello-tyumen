@@ -3,7 +3,7 @@
   "use strict";
 
   var EXTRA = {
-    slovtsov:       { geo: { lat: 57.15401, lon: 65.54996 }, hours: { open: 10, close: 18, closed: [1] } },
+    slovtsov:       { geo: { lat: 57.15401, lon: 65.54996 }, hours: { open: 10, close: 18, closed: [1] }, photo: "photos/slovtsov.jpg" },
     myhistory:      { geo: { lat: 57.15295, lon: 65.54823 }, hours: { open: 10, close: 20, closed: [1] } },
     bdt:            { geo: { lat: 57.14433, lon: 65.56013 }, hours: { open: 10, close: 19 }, photo: "photos/bdt.jpg" },
     library:        { geo: { lat: 57.15011, lon: 65.54397 }, hours: { open: 9, close: 20 }, photo: "photos/library.jpg" },
