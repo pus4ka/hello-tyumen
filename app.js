@@ -303,6 +303,109 @@
     return { x: x * 100, y: y * 100 };
   }
 
+  /* ---------------- map zoom & pan ---------------- */
+  function initMapZoom() {
+    const canvas = $("#mapCanvas"), stage = $("#mapStage");
+    if (!canvas || !stage) return;
+    if (canvas.dataset.zoomInit === "1") return;
+    canvas.dataset.zoomInit = "1";
+    const MIN = 1, MAX = 4;
+    let k = 1, tx = 0, ty = 0;
+
+    const clamp = () => {
+      const w = canvas.clientWidth, h = canvas.clientHeight;
+      tx = Math.min(0, Math.max(w - w * k, tx));
+      ty = Math.min(0, Math.max(h - h * k, ty));
+    };
+    const apply = () => {
+      clamp();
+      stage.style.transform = `translate(${tx}px, ${ty}px) scale(${k})`;
+      stage.style.setProperty("--k", k.toFixed(3));
+      stage.classList.toggle("is-zoomed", k > 1.02);
+    };
+    const zoomAt = (nextK, cx, cy) => {
+      nextK = Math.max(MIN, Math.min(MAX, nextK));
+      const rect = canvas.getBoundingClientRect();
+      const px = cx - rect.left, py = cy - rect.top;
+      tx = px - (px - tx) * (nextK / k);
+      ty = py - (py - ty) * (nextK / k);
+      k = nextK;
+      apply();
+    };
+
+    canvas.querySelectorAll("[data-map-zoom]").forEach(btn => {
+      btn.addEventListener("click", e => {
+        e.stopPropagation();
+        const act = btn.dataset.mapZoom;
+        if (act === "in") zoomAt(k * 1.5, canvas.getBoundingClientRect().left + canvas.clientWidth / 2, canvas.getBoundingClientRect().top + canvas.clientHeight / 2);
+        else if (act === "out") zoomAt(k / 1.5, canvas.getBoundingClientRect().left + canvas.clientWidth / 2, canvas.getBoundingClientRect().top + canvas.clientHeight / 2);
+        else { k = 1; tx = 0; ty = 0; apply(); }
+      });
+    });
+
+    canvas.addEventListener("wheel", e => {
+      if (Math.abs(e.deltaY) < 2) return;
+      e.preventDefault();
+      zoomAt(k * (e.deltaY < 0 ? 1.18 : 1 / 1.18), e.clientX, e.clientY);
+    }, { passive: false });
+
+    const pointers = new Map();
+    let start = null, pinchDist = 0, pinchK = 1;
+
+    canvas.addEventListener("pointerdown", e => {
+      if (e.target.closest(".map-btn")) return;
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      canvas.setPointerCapture(e.pointerId);
+      if (pointers.size === 1) {
+        start = { x: e.clientX - tx, y: e.clientY - ty, moved: false };
+        stage.classList.add("is-drag");
+      } else if (pointers.size === 2) {
+        const [a, b] = [...pointers.values()];
+        pinchDist = Math.hypot(a.x - b.x, a.y - b.y);
+        pinchK = k;
+        start = null;
+      }
+    });
+
+    canvas.addEventListener("pointermove", e => {
+      if (!pointers.has(e.pointerId)) return;
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (pointers.size === 2) {
+        const [a, b] = [...pointers.values()];
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (pinchDist > 0) zoomAt(pinchK * (d / pinchDist), (a.x + b.x) / 2, (a.y + b.y) / 2);
+        return;
+      }
+      if (!start) return;
+      tx = e.clientX - start.x;
+      ty = e.clientY - start.y;
+      if (Math.abs(tx) + Math.abs(ty) > 3) start.moved = true;
+      apply();
+    });
+
+    const end = e => {
+      pointers.delete(e.pointerId);
+      if (pointers.size === 0) {
+        stage.classList.remove("is-drag");
+        if (start && start.moved) canvas.dataset.dragged = "1";
+        start = null;
+      }
+    };
+    canvas.addEventListener("pointerup", end);
+    canvas.addEventListener("pointercancel", end);
+
+    // не открывать карточку после перетаскивания
+    canvas.addEventListener("click", e => {
+      if (canvas.dataset.dragged === "1") {
+        canvas.dataset.dragged = "";
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    }, true);
+
+    apply();
+  }
+
   function renderMap() {
     const wrap = $("#pins");
     if (!wrap) return;
@@ -760,6 +863,7 @@
     renderEvents();
     renderFavorites();
     renderMap();
+    initMapZoom();
     renderMapList();
     renderRoutes();
     renderChecklist();
