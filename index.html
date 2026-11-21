@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hello, Tyumen! — гид по студенческому досугу</title>
+<meta name="description" content="Двузычный гид по бесплатному и недорогому досугу в Тюмени для иногородних и иностранных студентов ТюмГУ. Bilingual guide to student life in Tyumen.">
+<meta name="theme-color" content="#f6efe3">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c2b26'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23f6efe3' text-anchor='middle'%3EHT%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hello, Tyumen! — гид по студенческому досугу">
+<meta property="og:description" content="Бесплатный и недорогой досуг в Тюмени на русском и английском. Free and cheap student life in Tyumen.">
+<meta property="og:image" content="og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="a11y.skip">К содержанию</a>
+
+<header class="head" id="head">
+  <div class="wrap head-in">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">HT</span>
+      <span class="brand-name">Hello, Tyumen!</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Разделы">
+      <a href="#pick" data-i18n="nav.pick">Подбор</a>
+      <a href="#routes" data-i18n="nav.routes">Маршруты</a>
+      <a href="#places" data-i18n="nav.places">Места</a>
+      <a href="#clubs" data-i18n="nav.clubs">Клубы</a>
+      <a href="#events" data-i18n="nav.events">События</a>
+      <a href="#map" data-i18n="nav.map">Карта</a>
+      <a href="#start" data-i18n="nav.start">Первый месяц</a>
+    </nav>
+
+    <div class="head-tools">
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Тема" title="Тема">
+        <svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19"/></svg>
+      </button>
+      <button class="fav-btn" id="favBtn" type="button" aria-label="Избранное">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3 4.7 13a4.6 4.6 0 0 1 6.5-6.5l.8.8.8-.8A4.6 4.6 0 0 1 19.3 13Z"/></svg>
+        <span class="fav-count" id="favCount">0</span>
+      </button>
+      <div class="lang" role="group" aria-label="Язык / Language">
+        <button class="lang-btn is-on" type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true"><img src="photos/tyumen.jpg" alt=""></div>
+    <p class="hero-credit">Набережная Туры. Фото: Wikimedia Commons</p>
+
+
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        
+        <h1 class="hero-title">
+          <span class="t1" data-i18n="hero.title1">Hello,</span>
+          <span class="t2" data-i18n="hero.title2">Tyumen!</span>
+        </h1>
+        <p class="hero-lead" data-i18n="hero.lead">Гид по бесплатному и недорогому досугу для тех, кто только что приехал учиться. Пять интересов, три бюджета — и вечер уже есть.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#pick" data-i18n="hero.cta1">Подобрать вечер</a>
+          <a class="btn btn-ghost" href="#places" data-i18n="hero.cta2">Смотреть места</a>
+        </div>
+        <p class="hero-note" data-i18n="hero.note">Без регистрации. Два языка. Всё проверено в городе.</p>
+        <ul class="hero-index">
+          <li><span>01</span><a href="#pick" data-i18n="hero.q1">Подобрать вечер по интересу</a></li>
+          <li><span>02</span><a href="#routes" data-i18n="hero.q2">Посмотреть готовые маршруты</a></li>
+          <li><span>03</span><a href="#map" data-i18n="hero.q3">Открыть карту города</a></li>
+        </ul>
+      </div>
+
+
+    </div>
+
+    <div class="wrap">
+      <dl class="stats" id="stats">
+        <div class="stat"><dt data-i18n="stats.first">первокурсников в 2026</dt><dd data-count="5000">5 000</dd></div>
+        <div class="stat"><dt data-i18n="stats.intl">иностранных студентов</dt><dd data-count="947">947</dd></div>
+        <div class="stat"><dt data-i18n="stats.countries">стран</dt><dd data-count="29">29</dd></div>
+        <div class="stat"><dt data-i18n="stats.clubs">студенческих объединений</dt><dd data-count="150">150+</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="gallery" aria-label="Фотографии города">
+    <figure><img src="photos/tsvetnoy.jpg" alt="Цветной бульвар"><figcaption>Цветной бульвар</figcaption></figure>
+    <figure><img src="photos/bdt.jpg" alt="Драматический театр"><figcaption>Драматический театр</figcaption></figure>
+    <figure><img src="photos/gilyovskaya.jpg" alt="Гилёвская роща"><figcaption>Гилёвская роща</figcaption></figure>
+  </section>
+
+  <!-- ============ PICKER ============ -->
+  <section class="section" id="pick">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker" data-i18n="pick.kicker">Шаг за шагом</p>
+        <h2 data-i18n="pick.title">Подбери вечер за три шага</h2>
+        <p class="sec-lead" data-i18n="pick.lead">Ответь на три вопроса — покажем места, которые подходят именно тебе.</p>
+      </header>
+
+      <div class="picker" id="picker">
+        <div class="step" data-step="1">
+          <div class="step-head"><span class="step-num">01</span><h3 data-i18n="pick.step1">Что хочется?</h3></div>
+          <div class="opts" id="optCat"></div>
+        </div>
+        <div class="step" data-step="2">
+          <div class="step-head"><span class="step-num">02</span><h3 data-i18n="pick.step2">Сколько потратить?</h3></div>
+          <div class="opts" id="optBudget"></div>
+        </div>
+        <div class="step" data-step="3">
+          <div class="step-head"><span class="step-num">03</span><h3 data-i18n="pick.step3">С кем идти?</h3></div>
+          <div class="opts" id="optCompany"></div>
+        </div>
+      </div>
+
+      <div class="pick-result" id="pickResult" hidden>
+        <div class="result-head">
+          <h3 id="resultTitle" data-i18n="pick.result">Твои варианты</h3>
+          <button class="link-btn" id="pickReset" type="button" data-i18n="pick.again">Начать заново</button>
+        </div>
+        <div class="grid grid-3" id="resultGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROUTES ============ -->
+  <section class="section section-tint" id="routes">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker" data-i18n="routes.kicker">Готовые сценарии</p>
+        <h2 data-i18n="routes.title">Три вечера, которые уже собраны</h2>
+        <p class="sec-lead" data-i18n="routes.lead">Если не хочется выбирать — возьми маршрут: три места, время и бюджет.</p>
+      </header>
+      <div class="routes" id="routesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ PLACES ============ -->
+  <section class="section section-tint" id="places">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker" data-i18n="places.kicker">Подборки</p>
+        <h2 data-i18n="places.title">Места и активности</h2>
+        <p class="sec-lead" data-i18n="places.lead">Пять категорий: культура, спорт, природа, еда и вечер. Фильтруй по интересу и бюджету.</p>
+      </header>
+
+      <div class="filters">
+        <div class="searchbar">
+          <label class="searchbox">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+            <input id="search" type="search" autocomplete="off" data-i18n-ph="search.placeholder" placeholder="Музей, каток, набережная…">
+          </label>
+          <label class="sortbox">
+            <span data-i18n="sort.label">Сортировка</span>
+            <select id="sort">
+              <option value="default" data-i18n="sort.default">По умолчанию</option>
+              <option value="free" data-i18n="sort.free">Сначала бесплатные</option>
+              <option value="name" data-i18n="sort.name">По алфавиту</option>
+            </select>
+          </label>
+        </div>
+        <div class="chips" id="catChips" role="group" aria-label="Категории"></div>
+        <div class="toggles">
+          <div class="budget" role="group" aria-label="Бюджет">
+            <span class="budget-label" data-i18n="filter.budget">Бюджет</span>
+            <button class="budget-btn is-on" type="button" data-budget="any" aria-pressed="true" data-i18n="budget.any">Любой</button>
+            <button class="budget-btn" type="button" data-budget="free" aria-pressed="false" data-i18n="budget.0">Бесплатно</button>
+            <button class="budget-btn" type="button" data-budget="cheap" aria-pressed="false" data-i18n="budget.1">До 300 ₽</button>
+          </div>
+          <button class="toggle" id="tglOpen" type="button" aria-pressed="false"><span class="dot-open"></span><span data-i18n="filter.open">Открыто сейчас</span></button>
+          <button class="toggle" id="tglStudent" type="button" aria-pressed="false"><span class="tgl-dot"></span><span data-i18n="filter.students">Со скидкой по студенческому</span></button>
+          <div class="season" role="group" aria-label="Сезон">
+            <span class="season-label" data-i18n="season.title">Сейчас в городе</span>
+            <button class="season-btn is-on" type="button" data-season="winter" aria-pressed="true" data-i18n="season.winter">Зима</button>
+            <button class="season-btn" type="button" data-season="all" aria-pressed="false" data-i18n="season.warm">Тепло</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" id="placesGrid"></div>
+      <p class="empty" id="placesEmpty" hidden></p>
+    </div>
+  </section>
+
+  <!-- ============ FAVORITES ============ -->
+  <section class="section" id="favorites">
+    <div class="wrap">
+      <header class="sec-head sec-head-row">
+        <div>
+          <p class="kicker" data-i18n="fav.kicker">Ваш список</p>
+          <h2 data-i18n="fav.title">Избранные места</h2>
+          <p class="sec-lead" data-i18n="fav.lead">Сюда попадают места, которые вы отметили сердечком. Список хранится в браузере и не требует регистрации.</p>
+        </div>
+        <button class="link-btn" id="favClear" type="button" data-i18n="fav.clear">Очистить список</button>
+      </header>
+      <div class="grid grid-3" id="favGrid"></div>
+      <div class="fav-empty" id="favEmpty">
+        <p class="fav-empty-title" data-i18n="fav.emptyTitle">Пока ничего не отмечено</p>
+        <p class="fav-empty-text" data-i18n="fav.empty">Нажмите сердечко на карточке места, и оно появится здесь.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FREE STRIP ============ -->
+  <section class="section" id="free">
+    <div class="wrap">
+      <header class="sec-head sec-head-row">
+        <div>
+          <p class="kicker" data-i18n="free.kicker">Бюджет</p>
+          <h2 data-i18n="free.title">Бесплатно и до 300 ₽</h2>
+          <p class="sec-lead" data-i18n="free.lead">Всё, что не бьёт по стипендии. Прокат коньков оплачивается отдельно.</p>
+        </div>
+        <div class="scroll-hint" aria-hidden="true">→</div>
+      </header>
+      <div class="strip" id="freeStrip"></div>
+    </div>
+  </section>
+
+  <!-- ============ CLUBS ============ -->
+  <section class="section section-tint" id="clubs">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker" data-i18n="clubs.kicker">Компания</p>
+        <h2 data-i18n="clubs.title">Клубы и сообщества ТюмГУ</h2>
+        <p class="sec-lead" data-i18n="clubs.lead">Более 150 объединений. Здесь — те, куда проще всего попасть первокурснику.</p>
+      </header>
+      <div class="clubs" id="clubsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ EVENTS ============ -->
+  <section class="section" id="events">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker" data-i18n="events.kicker">Регулярно</p>
+        <h2 data-i18n="events.title">Бесплатные события, которые повторяются</h2>
+        <p class="sec-lead" data-i18n="events.lead">Даты смотри в VK-сообществах площадок: анонсы выходят за 3–7 дней.</p>
+      </header>
+      <ol class="events" id="eventsList"></ol>
+    </div>
+  </section>
+
+  <!-- ============ MAP ============ -->
+  <section class="section section-tint" id="map">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker" data-i18n="map.kicker">Ориентирование</p>
+        <h2 data-i18n="map.title">Карта центра</h2>
+        <p class="sec-lead" data-i18n="map.lead">Настоящая карта Тюмени. Нажми на точку — откроется карточка места.</p>
+      </header>
+
+      <div class="map-layout">
+        <div class="map-frame">
+          <div class="map-canvas" id="mapCanvas">
+            <img class="map-img" src="map-bg.jpg" alt="Карта центра Тюмени">
+            <div class="map-pins" id="pins"></div>
+            <span class="map-attr" data-i18n="map.attribution">Карта: © OpenStreetMap contributors</span>
+          </div>
+          <p class="map-legend"><span class="dot-live"></span><span data-i18n="map.legend">Нажми на точку, чтобы открыть карточку места</span></p>
+        </div>
+
+        <div class="map-list" id="mapList" aria-label="Список мест на карте"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHECKLIST ============ -->
+  <section class="section" id="start">
+    <div class="wrap start-grid">
+      <div>
+        <p class="kicker" data-i18n="start.kicker">Первые недели</p>
+        <h2 data-i18n="start.title">Чек-лист первого месяца</h2>
+        <p class="sec-lead" data-i18n="start.lead">Шесть вещей, которые решают 90% бытовых проблем новичка.</p>
+        <div class="progress-wrap">
+          <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+          <p class="progress-text"><strong id="progressNum">0/6</strong> <span data-i18n="start.progress">готово</span></p>
+        </div>
+        <button class="link-btn" id="checkReset" type="button" data-i18n="start.reset">Сбросить</button>
+      </div>
+      <ul class="checklist" id="checklist"></ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand">Hello, Tyumen!</p>
+      <p class="foot-note" data-i18n="footer.note">Цены и часы проверены по открытым источникам в ноябре 2026 года. Перед походом уточняй на кассе или в сообществе площадки.</p>
+      <p class="foot-note foot-lang" data-i18n="footer.lang">Сайт полностью двуязычный: весь контент переведён, а не только меню.</p>
+    </div>
+    <div>
+      <p class="foot-h" data-i18n="footer.sources">Источники данных</p>
+      <ul class="foot-links">
+        <li><a href="https://museum-72.ru" target="_blank" rel="noopener">museum-72.ru</a></li>
+        <li><a href="https://tdt.kto72.ru" target="_blank" rel="noopener">tdt.kto72.ru</a></li>
+        <li><a href="https://tonb.ru" target="_blank" rel="noopener">tonb.ru</a></li>
+        <li><a href="https://vk.com/kontora72" target="_blank" rel="noopener">vk.com/kontora72</a></li>
+        <li><a href="https://visittyumen.ru" target="_blank" rel="noopener">visittyumen.ru</a></li>
+        <li><a href="https://www.utmn.ru" target="_blank" rel="noopener">utmn.ru</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-h">2026</p>
+      <p class="foot-note" data-i18n="footer.project">Учебный проект по английскому языку · Тюменский государственный университет, 2026</p>
+      <p class="foot-note">Фотографии мест: Wikimedia Commons, CC BY-SA · карта: © OpenStreetMap contributors</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-x" type="button" data-close aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<nav class="tabbar" id="tabbar" aria-label="Мобильная навигация">
+  <a href="#top" data-tab="top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-6 8 6M6 10v9h12v-9"/></svg><span data-i18n="nav.home">Главная</span></a>
+  <a href="#pick" data-tab="pick"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><span data-i18n="nav.pick">Подбор</span></a>
+  <a href="#routes" data-tab="routes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 19c0-4 12-3 12-7s-9-2-9-6"/><circle cx="6" cy="19" r="1.6"/><circle cx="9" cy="6" r="1.6"/></svg><span data-i18n="nav.routes">Маршруты</span></a>
+  <a href="#places" data-tab="places"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span data-i18n="nav.places">Места</span></a>
+  <a href="#map" data-tab="map"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg><span data-i18n="nav.map">Карта</span></a>
+</nav>
+
+<script src="data.js"></script>
+<script src="data-extra.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
