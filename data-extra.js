@@ -6,12 +6,12 @@
     slovtsov:       { geo: { lat: 57.15401, lon: 65.54996 }, hours: { open: 10, close: 18, closed: [1] } },
     myhistory:      { geo: { lat: 57.15295, lon: 65.54823 }, hours: { open: 10, close: 20, closed: [1] } },
     bdt:            { geo: { lat: 57.14433, lon: 65.56013 }, hours: { open: 10, close: 19 }, photo: "photos/bdt.jpg" },
-    library:        { geo: { lat: 57.15011, lon: 65.54397 }, hours: { open: 9, close: 20 } },
+    library:        { geo: { lat: 57.15011, lon: 65.54397 }, hours: { open: 9, close: 20 }, photo: "photos/library.jpg" },
     kontora:        { geo: { lat: 57.16112, lon: 65.54709 }, hours: { open: 12, close: 21 } },
-    tsum:           { geo: { lat: 57.14934, lon: 65.54205 }, hours: { open: 10, close: 21 }, photo: "photos/tsum.jpg" },
+    kipenie:        { geo: { lat: 57.13773, lon: 65.56658 }, hours: { open: 10, close: 20 } },
     embankment:     { geo: { lat: 57.16300, lon: 65.52400 }, hours: { open: 0, close: 24 }, photo: "photos/tyumen.jpg" },
     tsvetnoy:       { geo: { lat: 57.15109, lon: 65.53663 }, hours: { open: 0, close: 24 }, photo: "photos/tsvetnoy.jpg" },
-    cats:           { geo: { lat: 57.15391, lon: 65.53684 }, hours: { open: 0, close: 24 }, photo: "photos/cats.jpg" },
+    dzerzhinskogo:  { geo: { lat: 57.15815, lon: 65.53955 }, hours: { open: 0, close: 24 }, photo: "photos/dzerzhinskogo.jpg" },
     alexandrovsky:  { geo: { lat: 57.16018, lon: 65.52934 }, hours: { open: 0, close: 24 } },
     gilyovskaya:    { geo: { lat: 57.12678, lon: 65.63178 }, hours: { open: 0, close: 24 }, photo: "photos/gilyovskaya.jpg" },
     gagarin:        { geo: { lat: 57.17292, lon: 65.61782 }, hours: { open: 0, close: 24 }, photo: "photos/gagarin.jpg" },
@@ -46,11 +46,11 @@
     {
       id: "free",
       totalRu: "0 ₽", totalEn: "0 ₽",
-      ru: { title: "Вечер за 0 ₽", lead: "Прогулка по набережной, сквер кошек и бесплатное кино" },
-      en: { title: "An evening for 0 ₽", lead: "A walk along the embankment, the cats and a free film" },
+      ru: { title: "Вечер за 0 ₽", lead: "Прогулка по набережной, библиотека и бесплатное кино" },
+      en: { title: "An evening for 0 ₽", lead: "A walk along the embankment, the library and a free film" },
       steps: [
         { id: "embankment", timeRu: "18:00", timeEn: "18:00", noteRu: "Смотровая на Туру", noteEn: "The Tura viewpoint" },
-        { id: "cats", timeRu: "19:00", timeEn: "19:00", noteRu: "Фото у чугунных кошек", noteEn: "Photos with the iron cats" },
+        { id: "library", timeRu: "19:00", timeEn: "19:00", noteRu: "Читальный зал и бесплатный Wi-Fi", noteEn: "Reading room and free Wi-Fi" },
         { id: "filmclub", timeRu: "20:00", timeEn: "20:00", noteRu: "Киноклуб, вход свободный", noteEn: "Film club, free entry" }
       ]
     },
