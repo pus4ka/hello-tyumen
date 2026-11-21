@@ -109,7 +109,7 @@ window.STR = {
     "nav.events": "Events",
     "nav.map": "Map",
     "nav.start": "First month",
-    "hero.eyebrow": "TyumSU · bilingual guide · 2026",
+    "hero.eyebrow": "UTMN · bilingual guide · 2026",
     "hero.title1": "Hello,",
     "hero.title2": "Tyumen!",
     "hero.lead": "This guide helps students who have just arrived in Tyumen find free and cheap things to do in the evening. Choose an interest and a budget, and we will show you where to go.",
@@ -160,7 +160,7 @@ window.STR = {
     "free.title": "Free and under 300 ₽",
     "free.lead": "Here you will find only things that do not hurt your scholarship. Skate rental is paid separately.",
     "clubs.kicker": "Company",
-    "clubs.title": "Clubs and communities at TyumSU",
+    "clubs.title": "Clubs and communities at UTMN",
     "clubs.lead": "The university has more than 150 associations. We chose the ones that are easiest for a first-year student to join.",
     "clubs.how": "How to join",
     "events.kicker": "Recurring",
@@ -190,7 +190,7 @@ window.STR = {
     "modal.close": "Close",
     "footer.note": "Prices and hours checked against open sources in November 2026. Confirm at the ticket office or the venue's page before you go.",
     "footer.sources": "Data sources",
-    "footer.project": "A school project for English. Tyumen State University, 2026",
+    "footer.project": "A school project for English. University of Tyumen, 2026",
     "footer.lang": "We update the collections every month. Last update: November 2026.",
     "season.title": "In the city now",
     "season.winter": "Winter",
@@ -362,9 +362,9 @@ window.PLACES = [
     id: "canteen", cat: "food", budget: 0, students: true, season: "all",
     company: ["alone", "friends"],
     ru: { name: "Столовая ТюмГУ", desc: "Самые низкие цены в центре: гарниры от 10 ₽, салаты 80–150 ₽, латте около 50 ₽.", tip: "Пик с 12:00 до 13:30 — приходи раньше. Для входа в корпус нужен студенческий." },
-    en: { name: "TyumSU Canteen", desc: "The lowest prices downtown: sides from 10 ₽, salads 80–150 ₽, a latte around 50 ₽.", tip: "Peak time is 12:00–13:30, so come earlier. You need a student ID to enter the building." },
+    en: { name: "UTMN Canteen", desc: "The lowest prices downtown: sides from 10 ₽, salads 80–150 ₽, a latte around 50 ₽.", tip: "Peak time is 12:00–13:30, so come earlier. You need a student ID to enter the building." },
     priceRu: "обед от 100 ₽", priceEn: "lunch from 100 ₽",
-    addrRu: "корпус ТюмГУ, ул. Республики", addrEn: "TyumSU building, Respubliki St",
+    addrRu: "корпус ТюмГУ, ул. Республики", addrEn: "UTMN building, Respubliki St",
     link: "https://www.utmn.ru", map: [400, 330]
   },
   {
@@ -433,7 +433,7 @@ window.CLUBS = [
   },
   {
     ru: { name: "КВН ТюмГУ", desc: "Юмористические игры, областная лига, Весенний кубок.", how: "Отбор через управление молодёжной политики" },
-    en: { name: "TyumSU KVN", desc: "Comedy games, the regional league and the Spring Cup.", how: "Selection via the youth policy office" }
+    en: { name: "UTMN KVN", desc: "Comedy games, the regional league and the Spring Cup.", how: "Selection via the youth policy office" }
   },
   {
     ru: { name: "Объединённый совет обучающихся", desc: "Студенческое самоуправление, защита прав, мероприятия.", how: "Заявка через институт" },
@@ -461,7 +461,7 @@ window.CLUBS = [
   },
   {
     ru: { name: "Межкультурный диалог и AIS", desc: "Помощь иностранным студентам и межкультурные мероприятия.", how: "Ассоциация иностранных студентов на сайте ТюмГУ" },
-    en: { name: "Intercultural Dialogue & AIS", desc: "Support for international students and intercultural events.", how: "International Students Association on the TyumSU website" }
+    en: { name: "Intercultural Dialogue & AIS", desc: "Support for international students and intercultural events.", how: "International Students Association on the UTMN website" }
   },
   {
     ru: { name: "Спортивные секции", desc: "Бесплатные секции для студентов и соревнования.", how: "Кафедра физвоспитания или спортклуб" },
@@ -507,7 +507,7 @@ window.CHECKLIST = [
   },
   {
     ru: "Найти свою столовую: обед в ТюмГУ — от 100 ₽",
-    en: "Find your canteen: lunch at TyumSU from 100 ₽"
+    en: "Find your canteen: lunch at UTMN from 100 ₽"
   },
   {
     ru: "Поставить 2ГИС и Яндекс Транспорт — без них в Тюмени тяжело",
@@ -515,7 +515,7 @@ window.CHECKLIST = [
   },
   {
     ru: "Записаться в один клуб: в ТюмГУ более 150 объединений",
-    en: "Join one club: TyumSU has more than 150 associations"
+    en: "Join one club: UTMN has more than 150 associations"
   },
   {
     ru: "Пройти бесплатный маршрут: набережная → кошки → ЦУМ → «Контора»",
