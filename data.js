@@ -71,7 +71,7 @@ window.STR = {
     "events.when": "Когда",
     "map.kicker": "Ориентирование",
     "map.title": "Карта центра",
-    "map.lead": "На карте отмечены все места из подборки. Нажмите на точку, чтобы открыть карточку.",
+    "map.lead": "На карте отмечены все места из подборки. Колесо мыши или кнопки приближают карту, перетаскивание двигает её. Нажмите на точку, чтобы открыть карточку.",
     "map.legend": "Нажми на точку, чтобы открыть карточку места",
     "start.kicker": "Первые недели",
     "start.title": "Чек-лист первого месяца",
@@ -169,7 +169,7 @@ window.STR = {
     "events.when": "When",
     "map.kicker": "Getting around",
     "map.title": "Map of the centre",
-    "map.lead": "The map shows every place from the guide. Tap a pin to open the place card.",
+    "map.lead": "The map shows every place from the guide. Use the wheel or the buttons to zoom, drag to move it. Tap a pin to open the place card.",
     "map.legend": "Tap a pin to open the place card",
     "start.kicker": "First weeks",
     "start.title": "Your first-month checklist",
@@ -256,14 +256,16 @@ window.PLACES = [
     link: "https://vk.com/kontora72", map: [496, 250]
   },
   {
-    id: "tsum", cat: "culture", budget: 0, students: false, season: "all",
-    company: ["friends"],
-    ru: { name: "ЦУМ", desc: "Легендарный универмаг 1947 года — и городская достопримечательность в центре.", tip: "Удобная точка встречи и тёплый переход в непогоду. Рядом Сквер сибирских кошек и Цветной бульвар." },
-    en: { name: "TSUM Department Store", desc: "A legendary 1947 department store — and a city landmark in the centre.", tip: "A handy meeting point and a warm shortcut in bad weather, next to Siberian Cats Square and Tsvetnoy Boulevard." },
-    priceRu: "вход бесплатно", priceEn: "free entry",
-    addrRu: "ул. Орджоникидзе, 63", addrEn: "63 Ordzhonikidze St",
-    link: "https://tsum72.ru", map: [455, 330]
+    id: "kipenie", cat: "culture", budget: 0, students: false, season: "all",
+    company: ["alone", "friends", "meet"],
+    ru: { name: "Точка кипения", desc: "Городское пространство, где проходят бесплатные лекции, встречи и мастер-классы.", tip: "События бесплатные, но нужна регистрация на leader-id.ru. Здесь легко познакомиться со студентами других вузов." },
+    en: { name: "Tochka Kipeniya", desc: "A city space with free lectures, meetups and workshops.", tip: "Events are free, but you need to register on leader-id.ru. It is easy to meet students from other universities here." },
+    priceRu: "бесплатно", priceEn: "free",
+    addrRu: "ул. Республики, 142, 2 этаж", addrEn: "142 Respubliki St, 2nd floor",
+    howRu: "15 минут от Цветного бульвара", howEn: "15 minutes from Tsvetnoy Boulevard",
+    link: "https://leader-id.ru", map: [300, 470]
   },
+
   {
     id: "embankment", cat: "nature", budget: 0, students: false, season: "all",
     company: ["alone", "friends"],
@@ -283,14 +285,16 @@ window.PLACES = [
     link: "https://russpass.ru/place/60dab7d46e219d001801fe63", map: [470, 300]
   },
   {
-    id: "cats", cat: "nature", budget: 0, students: false, season: "all",
-    company: ["alone", "friends"],
-    ru: { name: "Сквер сибирских кошек", desc: "Камерный сквер с 12 чугунными кошками — память о кошках, спасших Эрмитаж.", tip: "Бесплатная фототочка по пути к ЦУМу. Проходится за 5 минут — совмести с бульваром." },
-    en: { name: "Siberian Cats Square", desc: "A small square with 12 cast-iron cats, honouring the cats that saved the Hermitage.", tip: "A free photo stop on the way to TSUM. It takes 5 minutes — combine it with the boulevard." },
+    id: "dzerzhinskogo", cat: "nature", budget: 0, students: false, season: "all",
+    company: ["alone", "friends", "meet"],
+    ru: { name: "Улица Дзержинского", desc: "Пешеходная улица со старыми домами, кофейнями и стрит-артом.", tip: "Лучше вечером: зажигаются витрины и почти нет очередей. Отсюда пять минут до набережной." },
+    en: { name: "Dzerzhinskogo Street", desc: "A pedestrian street with old houses, coffee shops and street art.", tip: "Come in the evening: the shop windows light up and there are almost no queues. The embankment is five minutes away." },
     priceRu: "бесплатно", priceEn: "free",
-    addrRu: "ул. Первомайская", addrEn: "Pervomayskaya St",
-    link: "https://russpass.ru/place/60da1bd71a4b07001930a805", map: [430, 350]
+    addrRu: "ул. Дзержинского", addrEn: "Dzerzhinskogo St",
+    howRu: "10 минут пешком от Цветного бульвара", howEn: "10 minutes on foot from Tsvetnoy Boulevard",
+    link: "", map: [470, 300]
   },
+
   {
     id: "alexandrovsky", cat: "nature", budget: 0, students: false, season: "all",
     company: ["alone", "friends"],
@@ -518,8 +522,8 @@ window.CHECKLIST = [
     en: "Join one club: UTMN has more than 150 associations"
   },
   {
-    ru: "Пройти бесплатный маршрут: набережная → кошки → ЦУМ → «Контора»",
-    en: "Walk the free route: embankment → cats → TSUM → Kontora"
+    ru: "Пройти бесплатный маршрут: набережная → библиотека → «Контора»",
+    en: "Walk the free route: embankment → library → Kontora"
   }
 ];
 
