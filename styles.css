@@ -624,3 +624,68 @@ main{counter-reset:sec}
 
 .pin-body{display:grid;place-items:center;border-radius:50%}
 .pin-body svg{width:11px;height:11px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ============ v6: типографика, плашки, карта ============ */
+/* убираем мелкие кикеры с номерами */
+.section .kicker,.sec-head .kicker,.kicker{display:none!important}
+
+/* номера: 1, 2, 3 — крупно, гротеском */
+.hero-index span{font-family:var(--sans);font-size:30px;line-height:1;font-weight:700;letter-spacing:-.03em;color:var(--accent);margin-bottom:10px}
+.step-num{font-family:var(--sans);font-size:34px;line-height:1;font-weight:700;letter-spacing:-.04em;color:var(--accent)}
+.step-head{align-items:baseline;gap:14px}
+.club-num{font-family:var(--sans);font-size:24px;line-height:1;font-weight:700;color:var(--accent)}
+
+/* время: читаемый гротеск, ровные цифры */
+.rs-time{font-family:var(--sans);font-size:15px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:0}
+.route-total b,.route-go{font-family:var(--sans);font-variant-numeric:tabular-nums}
+
+/* галерея: рамки и подписи */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;background:none;border:0;padding:16px clamp(18px,4vw,48px)}
+.gallery figure{aspect-ratio:auto;overflow:visible;border:1px solid var(--line);background:var(--card);padding:8px;margin:0}
+.gallery img{aspect-ratio:3/2;height:auto;object-fit:cover;border:1px solid var(--line-soft)}
+.gallery figcaption{position:static;margin-top:8px;padding:0;background:none;font-family:var(--sans);font-size:11.5px;letter-spacing:0;text-transform:none;color:var(--muted)}
+
+/* сетка мест без дыр */
+#placesGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;columns:auto}
+#placesGrid .card{display:flex;flex-direction:column;margin:0;break-inside:auto;height:100%}
+#placesGrid .card .card-more{margin-top:auto}
+.card-media{aspect-ratio:auto;height:186px}
+
+/* клубы и события — плашки со скруглением */
+.clubs{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:0;column-gap:12px}
+.club{border:1px solid var(--line);background:var(--card);border-radius:16px;padding:16px 18px;grid-template-columns:34px 1fr;gap:12px;transition:border-color .15s,transform .15s}
+.club:hover{border-color:var(--ink);transform:translateY(-1px)}
+.events{display:grid;gap:10px;border-top:0;margin:0;padding:0;list-style:none}
+.event{border:1px solid var(--line);background:var(--card);border-radius:16px;padding:14px 18px;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) auto;align-items:center;border-bottom:1px solid var(--line)}
+.event:hover{border-color:var(--ink)}
+
+/* карта: крупные значки и легенда */
+.map-pin .pin-body{width:28px;height:28px;border-width:2.5px;box-shadow:0 2px 8px rgba(0,0,0,.28)}
+.pin-body svg{width:15px;height:15px}
+.map-key{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0 0;margin:0;list-style:none}
+.map-key li{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px 6px 6px;font-size:12px;color:var(--ink-2)}
+.key-icon{width:22px;height:22px;border-radius:50%;background:var(--c);display:grid;place-items:center}
+.key-icon svg{width:12px;height:12px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* избранное: выпадающая вкладка */
+.topbar-inner{position:relative}
+.fav-pop{position:absolute;right:0;top:calc(100% + 10px);width:310px;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.16);padding:14px;z-index:80}
+.fav-pop-title{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.fav-pop-list{list-style:none;margin:0;padding:0;max-height:270px;overflow:auto}
+.fav-pop-list button{width:100%;display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:9px 6px;border:0;border-bottom:1px solid var(--line-soft);background:none;cursor:pointer;text-align:left}
+.fav-pop-list button:hover .fp-name{color:var(--accent)}
+.fp-name{font-size:13px;font-weight:600}
+.fp-cat{font-size:10px;color:var(--muted);white-space:nowrap}
+.fp-empty{font-size:12px;color:var(--muted);padding:8px 6px;line-height:1.45}
+.fav-pop-all{display:block;margin-top:10px;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);text-decoration:none}
+
+@media (max-width:820px){
+  .fav-pop{position:fixed;right:12px;left:12px;top:70px;width:auto}
+  .gallery{grid-template-columns:1fr;gap:12px;padding:14px 16px}
+  .clubs{grid-template-columns:1fr}
+  .event{grid-template-columns:1fr;gap:6px;align-items:start}
+  .hero-index span{font-size:24px}
+  .step-num{font-size:28px}
+}
+
+.fav-pop{right:16px;width:300px;max-width:calc(100vw - 32px)}
