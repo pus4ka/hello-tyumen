@@ -621,3 +621,6 @@ main{counter-reset:sec}
 }
 
 .m-credit{margin:-10px 0 14px;font-family:var(--mono);font-size:9.5px;letter-spacing:.03em;color:var(--muted)}
+
+.pin-body{display:grid;place-items:center;border-radius:50%}
+.pin-body svg{width:11px;height:11px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
