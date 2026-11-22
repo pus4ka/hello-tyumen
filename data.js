@@ -49,7 +49,7 @@ window.STR = {
     "company.meet": "Хочу познакомиться",
     "places.kicker": "Подборки",
     "places.title": "Места и активности",
-    "places.lead": "Все места собраны в пяти категориях. Их можно отфильтровать по интересу, бюджету и времени работы.",
+    "places.lead": "Все места собраны в шести категориях. Их можно отфильтровать по интересу, бюджету и времени работы.",
     "filter.all": "Всё",
     "filter.free": "Только бесплатно",
     "filter.students": "Со скидкой по студенческому",
@@ -147,7 +147,7 @@ window.STR = {
     "company.meet": "I want to meet people",
     "places.kicker": "Collections",
     "places.title": "Places and activities",
-    "places.lead": "All places are grouped into five categories. You can filter them by interest, budget and opening hours.",
+    "places.lead": "All places are grouped into six categories. You can filter them by interest, budget and opening hours.",
     "filter.all": "All",
     "filter.free": "Free only",
     "filter.students": "Student discount",
@@ -206,7 +206,8 @@ window.CATS = [
   { id: "sport",   ru: "Спорт",   en: "Sport",   color: "#2f6b62" },
   { id: "nature",  ru: "Природа", en: "Nature",  color: "#6b7f3a" },
   { id: "food",    ru: "Еда",     en: "Food",    color: "#b8862f" },
-  { id: "evening", ru: "Вечер",   en: "Evening", color: "#6b4a6e" }
+  { id: "evening", ru: "Вечер",   en: "Evening", color: "#6b4a6e" },
+  { id: "work",    ru: "Полезности", en: "Useful", color: "#2f5d8a" }
 ];
 
 window.PLACES = [
@@ -427,6 +428,46 @@ window.PLACES = [
     priceRu: "бесплатно", priceEn: "free",
     addrRu: "«Контора пароходства»", addrEn: "Kontora Parokhodstva",
     link: "https://megatyumen.ru/afisha/ebru-kvartirnik-i-yarmarka-rastenij-chem-zanyatsya-tyumencam-s-16-po-22-noyabrya/", map: [470, 236]
+  },
+  {
+    id: "printstudent", cat: "work", budget: 1, students: true, season: "all",
+    company: ["alone"],
+    ru: { name: "Printstudent", desc: "Копицентр в центре: печать курсовой, переплёт и фото на документы.", tip: "Страница печати стоит несколько рублей. В пятницу после обеда очередь — приходите утром." },
+    en: { name: "Printstudent", desc: "A copy shop in the centre: printing, binding and passport photos.", tip: "A printed page costs a few rubles. Friday afternoon is busy, so come in the morning." },
+    priceRu: "от 5 ₽ за страницу", priceEn: "from 5 ₽ per page",
+    addrRu: "ул. Ленина, 15", addrEn: "15 Lenina St",
+    howRu: "7 минут от Цветного бульвара", howEn: "7 minutes from Tsvetnoy Boulevard",
+    link: "https://vsecopycentri.ru/komp/printstudent-tyumen", map: [400, 300]
+  },
+  {
+    id: "coworking", cat: "work", budget: 0, students: true, season: "all",
+    company: ["alone", "friends"],
+    ru: { name: "Коворкинг ТюмГУ", desc: "Двухуровневое пространство для учёбы в корпусе ИСГН: розетки, Wi-Fi и тихие места.", tip: "Студентам ТюмГУ бесплатно, нужен пропуск. Лучше приходить до 10:00 — места у окон занимают первыми." },
+    en: { name: "UTMN Coworking", desc: "A two-level study space in the ISGN building: sockets, Wi-Fi and quiet corners.", tip: "Free for UTMN students with a pass. Come before 10:00, when the window seats are still free." },
+    priceRu: "бесплатно для студентов", priceEn: "free for UTMN students",
+    addrRu: "ул. Ленина, 23, 2 этаж", addrEn: "23 Lenina St, 2nd floor",
+    howRu: "10 минут от Цветного бульвара", howEn: "10 minutes from Tsvetnoy Boulevard",
+    link: "https://www.utmn.ru/x-bio/novosti/kampus/1235295/", map: [405, 295]
+  },
+  {
+    id: "zoo", cat: "nature", budget: 2, students: true, season: "all",
+    company: ["friends"],
+    ru: { name: "Зоопарк «Сосновый бор»", desc: "Большой зоопарк за городом: больше 200 видов животных и контактная зона.", tip: "Ехать 27 км по Ялуторовскому тракту, автобусом от автовокзала. Льготный билет для студентов — 400 ₽." },
+    en: { name: "Sosnovy Bor Zoo", desc: "A large zoo outside the city: more than 200 species and a contact zone.", tip: "It is 27 km along the Yalutorovsky Trakt, by bus from the bus station. A student ticket is 400 ₽." },
+    priceRu: "600 ₽, льготный 400 ₽", priceEn: "600 ₽, student 400 ₽",
+    addrRu: "Ялуторовский тракт, 27 км, стр. 7", addrEn: "27 km Yalutorovsky Trakt",
+    howRu: "40 минут на автобусе от автовокзала", howEn: "40 minutes by bus from the bus station",
+    link: "http://www.sosnovbir.ru", map: [300, 470]
+  },
+  {
+    id: "spletniki", cat: "evening", budget: 1, students: true, season: "all",
+    company: ["friends"],
+    ru: { name: "Ночной клуб «Сплетники»", desc: "Клубный комплекс на четыре зала: танцы, бар и громкая музыка до утра.", tip: "Вход 0–150 ₽, если сделать репост афиши. Младше 18 лет не пускают, нужен паспорт." },
+    en: { name: "Spletniki Night Club", desc: "A four-room club complex: dancing, a bar and loud music until morning.", tip: "Entry is 0–150 ₽ if you repost the poster. Under 18s are not allowed, so bring your passport." },
+    priceRu: "0–150 ₽ с репостом", priceEn: "0–150 ₽ with a repost",
+    addrRu: "ул. Максима Горького, 44/3", addrEn: "44/3 Maxim Gorky St",
+    howRu: "15 минут от Цветного бульвара", howEn: "15 minutes from Tsvetnoy Boulevard",
+    link: "https://live.mts.ru/tyumen/venues/club/nochnoy-klub-spletniki", map: [520, 340]
   }
 ];
 
@@ -471,7 +512,7 @@ window.CLUBS = [
     ru: { name: "Спортивные секции", desc: "Бесплатные секции для студентов и соревнования.", how: "Кафедра физвоспитания или спортклуб" },
     en: { name: "Sports Sections", desc: "Free sections for students and competitions.", how: "Physical education department or sports club" }
   }
-];
+]
 
 window.EVENTS = [
   {
