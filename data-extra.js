@@ -11,6 +11,7 @@
     coworking:      { geo: { lat: 57.15845, lon: 65.52826 }, hours: { open: 9, close: 20 } },
     spletniki:      { geo: { lat: 57.14988, lon: 65.56304 } },
     zoo:            { hours: { open: 10, close: 18 } },
+    krapivin:       { geo: { lat: 57.15670, lon: 65.53890 }, hours: { open: 0, close: 24 }, photo: "photos/krapivin.jpg" },
     kontora:        { geo: { lat: 57.16112, lon: 65.54709 }, hours: { open: 12, close: 21 }, photo: "photos/kontora.jpg", photoCredit: "Фото: мультицентр «Контора пароходства»" },
     kipenie:        { geo: { lat: 57.13773, lon: 65.56658 }, hours: { open: 10, close: 20 } },
     embankment:     { geo: { lat: 57.16300, lon: 65.52400 }, hours: { open: 0, close: 24 }, photo: "photos/tyumen.jpg" },
