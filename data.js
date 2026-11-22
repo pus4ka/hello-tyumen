@@ -82,6 +82,8 @@ window.STR = {
     "fav.kicker": "Ваш список",
     "fav.lead": "Сюда попадают места, которые вы отметили сердечком. Список хранится в браузере и не требует регистрации.",
     "fav.clear": "Очистить список",
+    "fav.popTitle": "Избранное",
+    "fav.popAll": "Открыть раздел",
     "fav.emptyTitle": "Пока ничего не отмечено",
     "fav.empty": "Пока пусто. Нажми на сердечко в карточке места.",
     "fav.count": "мест",
@@ -180,6 +182,8 @@ window.STR = {
     "fav.kicker": "Your list",
     "fav.lead": "Every place you mark with a heart appears here. The list is stored in your browser, with no registration.",
     "fav.clear": "Clear the list",
+    "fav.popTitle": "Saved places",
+    "fav.popAll": "Open the section",
     "fav.emptyTitle": "Nothing saved yet",
     "fav.empty": "Tap the heart on a place card and it will appear here.",
     "fav.count": "places",
@@ -468,7 +472,18 @@ window.PLACES = [
     addrRu: "ул. Максима Горького, 44/3", addrEn: "44/3 Maxim Gorky St",
     howRu: "15 минут от Цветного бульвара", howEn: "15 minutes from Tsvetnoy Boulevard",
     link: "https://live.mts.ru/tyumen/venues/club/nochnoy-klub-spletniki", map: [520, 340]
-  }
+  },
+  {
+    id: "krapivin", cat: "nature", budget: 0, students: false, season: "all",
+    company: ["alone", "friends"],
+    ru: { name: "Сквер Владислава Крапивина", desc: "Камерный сквер с морским характером: мурал с парусником, качели и книгообменник в виде корабля.", tip: "Открыт в 2022 году на Ленина, между Семаковым и Кировым. Здесь тихо даже в обед — хорошее место, чтобы почитать." },
+    en: { name: "Vladislav Krapivin Square", desc: "A small square with a sea mood: a sailing-ship mural, swings and a book exchange shaped like a boat.", tip: "It opened in 2022 on Lenina Street, between Semakova and Kirova. It is quiet even at lunchtime — a good place to read." },
+    priceRu: "бесплатно", priceEn: "free",
+    addrRu: "ул. Ленина, между Семакова и Кирова", addrEn: "Lenina St, between Semakova and Kirova",
+    howRu: "8 минут от Цветного бульвара", howEn: "8 minutes from Tsvetnoy Boulevard",
+    link: "", map: [430, 315]
+  },
+
 ];
 
 window.CLUBS = [
