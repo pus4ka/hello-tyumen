@@ -689,3 +689,7 @@ main{counter-reset:sec}
 }
 
 .fav-pop{right:16px;width:300px;max-width:calc(100vw - 32px)}
+
+/* карточки без фото не растягиваются и не оставляют пустых полей */
+#placesGrid{align-items:start}
+#placesGrid .card{height:auto}
