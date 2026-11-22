@@ -178,6 +178,8 @@
     grid.innerHTML = shown.length
       ? shown.map(p => cardHTML(p)).join("")
       : `<p class="empty">${t("pick.empty")}</p>`;
+    layoutMasonry(grid);
+    setTimeout(() => layoutMasonry(grid), 120);
     revealCards(grid);
   }
 
@@ -254,9 +256,31 @@
     if (state.sort === "free") list = list.slice().sort((a, b) => a.budget - b.budget);
     if (state.sort === "name") list = list.slice().sort((a, b) => L(a).name.localeCompare(L(b).name, state.lang));
     grid.innerHTML = list.map(p => cardHTML(p)).join("");
+    layoutMasonry(grid);
+    setTimeout(() => layoutMasonry(grid), 120);
     $("#placesEmpty").hidden = list.length > 0;
     $("#placesEmpty").textContent = t("pick.empty");
     revealCards(grid);
+  }
+
+  function layoutMasonry(sel) {
+    const grid = typeof sel === "string" ? $(sel) : sel;
+    if (!grid) return;
+    const cs = getComputedStyle(grid);
+    if (!cs.gridTemplateColumns || cs.gridTemplateColumns === "none") return;
+    const rowGap = parseFloat(cs.rowGap) || 16;
+    grid.style.gridAutoRows = "1px";
+    const cards = Array.from(grid.children);
+    cards.forEach(c => { c.style.gridRowEnd = "auto"; });
+    const step = 1 + rowGap;
+    cards.forEach(c => {
+      const h = c.getBoundingClientRect().height;
+      if (h > 0) c.style.gridRowEnd = "span " + Math.max(1, Math.round((h + rowGap) / step));
+    });
+  }
+
+  function layoutAllMasonry() {
+    ["#placesGrid", "#favGrid", "#resultGrid"].forEach(layoutMasonry);
   }
 
   function renderCatChips() {
@@ -313,6 +337,7 @@
     if (!grid) return;
     const items = PLACES.filter(p => state.fav.has(p.id));
     grid.innerHTML = items.map(p => cardHTML(p)).join("");
+    layoutMasonry(grid);
     const empty = $("#favEmpty");
     if (empty) empty.hidden = items.length > 0;
     const clear = $("#favClear");
@@ -946,6 +971,9 @@
     renderPlaces(); renderFree(); renderPickResult();
   }
 
+  window.addEventListener("load", () => setTimeout(layoutAllMasonry, 60));
+  let mzTimer;
+  window.addEventListener("resize", () => { clearTimeout(mzTimer); mzTimer = setTimeout(layoutAllMasonry, 120); });
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 })();
