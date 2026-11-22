@@ -244,6 +244,13 @@
       }
       return true;
     });
+    if (state.sort === "default") {
+      const feat = ["krapivin","coworking","printstudent","kipenie","dzerzhinskogo","kontora","library","skhodka","stolovaya38","myhistory","slovtsov","gilyovskaya","gagarin","embankment","tsvetnoy","bdt"];
+      list = list.slice().sort((x, y) => {
+        const ix = feat.indexOf(x.id), iy = feat.indexOf(y.id);
+        return (ix === -1 ? 99 : ix) - (iy === -1 ? 99 : iy) || L(x).name.localeCompare(L(y).name, state.lang);
+      });
+    }
     if (state.sort === "free") list = list.slice().sort((a, b) => a.budget - b.budget);
     if (state.sort === "name") list = list.slice().sort((a, b) => L(a).name.localeCompare(L(b).name, state.lang));
     grid.innerHTML = list.map(p => cardHTML(p)).join("");
@@ -270,7 +277,7 @@
   function renderClubs() {
     $("#clubsGrid").innerHTML = CLUBS.map((c, i) => `
       <article class="club">
-        <span class="club-num">${String(i + 1).padStart(2, "0")}</span>
+        <span class="club-num">${i + 1}</span>
         <div>
           <h3>${L(c).name}</h3>
           <p>${L(c).desc}</p>
@@ -289,6 +296,16 @@
         <p class="event-when">${L(e).when}</p>
         <span class="event-cost${/бесплат|free/i.test(L(e).cost) ? "" : " is-paid"}">${L(e).cost}</span>
       </li>`).join("");
+  }
+
+  function renderFavPop() {
+    const pop = $("#favPop");
+    if (!pop || pop.hidden) return;
+    const items = PLACES.filter(p => state.fav.has(p.id));
+    const list = $("#favPopList");
+    list.innerHTML = items.length
+      ? items.map(p => `<li><button type="button" data-open="${p.id}"><span class="fp-name">${L(p).name}</span><span class="fp-cat">${catName(p.cat)}</span></button></li>`).join("")
+      : `<li class="fp-empty">${t("fav.empty")}</li>`;
   }
 
   function renderFavorites() {
@@ -416,9 +433,16 @@
     apply();
   }
 
+  function renderMapKey() {
+    const key = $("#mapKey");
+    if (!key) return;
+    key.innerHTML = CATS.map(c => `<li><span class="key-icon" style="--c:${c.color}">${PIN_ICONS[c.id] || ""}</span>${c[state.lang]}</li>`).join("");
+  }
+
   function renderMap() {
     const wrap = $("#pins");
     if (!wrap) return;
+    renderMapKey();
     wrap.innerHTML = PLACES.filter(p => p.geo).map(p => {
       const pos = project(p.geo.lat, p.geo.lon);
       const fav = state.fav.has(p.id);
@@ -509,6 +533,7 @@
     save(LS.fav, JSON.stringify([...state.fav]));
     renderFavState();
     renderFavorites();
+    renderFavPop();
     if (state.modal) renderModal();
   }
 
@@ -825,8 +850,28 @@
       }
     });
 
+    // favorites: small popover
+    const favPop = $("#favPop");
+    $("#favBtn").addEventListener("click", e => {
+      e.stopPropagation();
+      if (!favPop) return;
+      favPop.hidden = !favPop.hidden;
+      renderFavPop();
+    });
+    document.addEventListener("click", e => {
+      if (favPop && !favPop.hidden && !e.target.closest("#favPop") && !e.target.closest("#favBtn")) favPop.hidden = true;
+    });
+    window.addEventListener("scroll", () => {
+      if (favPop && !favPop.hidden) favPop.hidden = true;
+    }, { passive: true });
+
+    // link inside popover to the section
+    if (favPop) favPop.addEventListener("click", e => {
+      if (!e.target.closest('[data-open]')) favPop.hidden = true;
+    });
+
     // favorites: jump to the section and flash it
-    $("#favBtn").addEventListener("click", () => {
+    $("#favBtn").addEventListener("dblclick", () => {
       const target = document.getElementById("favorites");
       if (!target) return;
       window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 76, behavior: "smooth" });
