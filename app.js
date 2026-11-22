@@ -23,6 +23,16 @@
     lastFocus: null
   };
 
+
+  const PIN_ICONS = {
+    culture: '<svg viewBox="0 0 24 24"><path d="M4 6h16v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M9 11h.01M15 11h.01"/><path d="M9 15c1.8 1.3 4.2 1.3 6 0"/></svg>',
+    sport:   '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg>',
+    nature:  '<svg viewBox="0 0 24 24"><path d="M12 3l6 8h-4l5 6H5l5-6H6z"/><path d="M12 17v4"/></svg>',
+    food:    '<svg viewBox="0 0 24 24"><path d="M7 3v8M10 3v8M8.5 11v10"/><path d="M16 3c2 0 3 2 3 4s-1 4-3 4v10"/></svg>',
+    evening: '<svg viewBox="0 0 24 24"><path d="M20 14a8 8 0 1 1-9-9 6 6 0 0 0 9 9z"/></svg>',
+    work:    '<svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>'
+  };
+
   const CAT_MAP = Object.fromEntries(CATS.map(c => [c.id, c]));
 
   /* ---------------- helpers ---------------- */
@@ -415,7 +425,7 @@
       return `<button type="button" class="map-pin${fav ? " is-fav" : ""}" data-open="${p.id}"
         style="left:${pos.x.toFixed(2)}%;top:${pos.y.toFixed(2)}%;--c:${catColor(p.cat)}"
         aria-label="${L(p).name}">
-        <span class="pin-body"></span>
+        <span class="pin-body">${PIN_ICONS[p.cat] || ""}</span>
         <span class="pin-label">${L(p).name}</span>
       </button>`;
     }).join("");
