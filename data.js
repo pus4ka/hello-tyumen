@@ -98,7 +98,7 @@ window.STR = {
     "footer.lang": "Подборки обновляем каждый месяц. Последнее обновление — ноябрь 2026.",
     "season.title": "Сейчас в городе",
     "season.winter": "Зима",
-    "season.warm": "Тепло",
+    "season.warm": "Лето",
     "lang.name": "Русский",
     "toast.saved": "Добавлено в избранное",
     "toast.removed": "Удалено из избранного"
@@ -198,7 +198,7 @@ window.STR = {
     "footer.lang": "We update the collections every month. Last update: November 2026.",
     "season.title": "In the city now",
     "season.winter": "Winter",
-    "season.warm": "Warm",
+    "season.warm": "Summer",
     "lang.name": "English",
     "toast.saved": "Saved",
     "toast.removed": "Removed"
